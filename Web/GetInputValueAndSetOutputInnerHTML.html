@@ -1,0 +1,20 @@
+<body>
+    <label><input value="Kevin" name="user" id="user"></label>
+    <button id="clickMe"> Click Me </button>
+    <div id="results">Results will go here.</div>
+</body>
+<script>
+    // Get Input Value And Set Output InnerHTML
+    function firstLetter(text) {
+        return text[0]; //index zero is the first letter
+    }
+    function handleClickMe() {
+        // let userInput = window.user;
+        let userInput = document.getElementById("user");
+        let textValue = userInput.value;
+        let resultsElement = document.getElementById("results");
+        resultsElement.innerHTML = firstLetter(textValue);
+    }
+    let buttonElement = document.getElementById("clickMe");
+    buttonElement.addEventListener("click", handleClickMe)
+</script>
