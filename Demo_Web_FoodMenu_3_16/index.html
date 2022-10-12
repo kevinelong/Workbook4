@@ -1,10 +1,35 @@
 <!-- FoodMenu - Workbook4, Section 3-16 -->
 <style>
+    #menu {
+        vertical-align: middle;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+
     select.naked {
         background: none;
         overflow-y: visible;
         border: none;
-        font-size: 4vh;
+        font-size: 3vh;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .inline {
+        display: inline-flex;
+        width: auto;
+        vertical-align: middle;
     }
 
     option.big-target {
@@ -12,9 +37,9 @@
         box-shadow: 0.125em 0.125em;
         border: 0.125em solid white;
         margin: 1em;
-        width: 16vw;
-        height: 10vw;
-        display: inline-flex;
+        width: 8em;
+        height: 5em;
+        display: flex;
         background: goldenrod;
         color: darkblue;
         justify-content: center;
@@ -28,17 +53,21 @@
 </style>
 
 <body>
-    <select size="3" class="naked">
-        <option value="drinks" class="big-target">
-            Drinks
-        </option>
-        <option value="entrees" class="big-target">
-            Entrees
-        </option>
-        <option value="desserts" class="big-target">
-            Desserts
-        </option>
-    </select>
+    <div id="menu">
+
+        <select size="3" class="naked inline">
+            <option value="drinks" class="big-target">
+                Drinks
+            </option>
+            <option value="entrees" class="big-target">
+                Entrees
+            </option>
+            <option value="desserts" class="big-target">
+                Desserts
+            </option>
+        </select>
+        <div id="results" class="inline">Results Here</div>
+    </div>
 </body>
 <script>
     let menu = {
