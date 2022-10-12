@@ -1,0 +1,67 @@
+<!-- FoodMenu - Workbook4, Section 3-16 -->
+<style>
+    select.naked {
+        background: none;
+        overflow-y: visible;
+        border: none;
+        font-size: 4vh;
+    }
+
+    option.big-target {
+        border-radius: 1em;
+        box-shadow: 0.125em 0.125em;
+        border: 0.125em solid white;
+        margin: 1em;
+        width: 16vw;
+        height: 10vw;
+        display: inline-flex;
+        background: goldenrod;
+        color: darkblue;
+        justify-content: center;
+        align-items: center;
+    }
+
+    option.big-target {
+        background: darkblue !important;
+        color: goldenrod;
+    }
+</style>
+
+<body>
+    <select size="3" class="naked">
+        <option value="drinks" class="big-target">
+            Drinks
+        </option>
+        <option value="entrees" class="big-target">
+            Entrees
+        </option>
+        <option value="desserts" class="big-target">
+            Desserts
+        </option>
+    </select>
+</body>
+<script>
+    let menu = {
+        drinks: [
+            "Water",
+            "Tea",
+            "Sweet Tea",
+            "Coke",
+            "Dr. Pepper",
+            "Sprite"
+        ],
+        entrees: [
+            "Hamburger w/ Fries",
+            "Grilled Cheese w/ Tater Tots",
+            "Grilled Chicken w/ Veggies",
+            "Chicken Fried Steak w/ Mashed Potatoes",
+            "Fried Shrimp w/ Coleslaw",
+            "Veggie Plate"
+        ],
+        desserts: [
+            "Cheesecake",
+            "Chocolate Cake",
+            "Snickerdoodle Cookie"
+        ]
+    };
+</script>
