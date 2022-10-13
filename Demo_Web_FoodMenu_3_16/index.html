@@ -1,5 +1,5 @@
 <!-- FoodMenu - Workbook4, Section 3-16 -->
-<style>
+<!-- <style>
     body {
         color:blanchedalmond;
         background-color: rgb(0,0,96);
@@ -43,7 +43,7 @@
         box-shadow: 0.125em 0.125em;
         border: 0.125em solid white;
         margin: 1em;
-        width: 8em;
+        width: 18em;
         height: 5em;
         display: flex;
         background: goldenrod;
@@ -56,11 +56,11 @@
         background: darkblue !important;
         color: goldenrod;
     }
-</style>
+</style> -->
 
 <body>
     <div id="menu">
-        <select size="3" class="naked inline">
+        <select id="category" size="3" class="naked inline">
             <option value="drinks" class="big-target">
                 Drinks
             </option>
@@ -71,8 +71,8 @@
                 Desserts
             </option>
         </select>
-        <div id="results" class="inline">
-            Results Here
+        <div class="inline">
+            <select id="results" size="12" class="naked inline"></select>
         </div>
     </div>
 </body>
@@ -100,4 +100,31 @@
             "Snickerdoodle Cookie"
         ]
     };
+    //1. find category list and listen for its change event.
+    let categoryElement = document.getElementById("category");
+
+    categoryElement.addEventListener("change", () => {
+        let selectedOption = categoryElement.selectedOptions[0];
+        let value = selectedOption.value;
+        console.log(value);
+        
+        //2. find selected category value corresponding list of strings in the data
+        let list = menu[value];
+        
+        //3. clear existing options
+        let results = document.getElementById("results");
+        results.innerHTML = ""; //quick way to clear all options
+        
+        //BONUS we set size to list length
+        results.setAttribute("size", list.length);
+
+        //4. add an option for each string
+        for(i=0; i < list.length; i++){
+            let option = document.createElement("option");
+            option.innerHTML = list[i];
+            option.setAttribute("class", "big-target"); //bonus
+            results.appendChild(option);
+        }
+    }); //END CHANGE LISTENER FUNCTION
+
 </script>
