@@ -1,4 +1,4 @@
-<!-- FoodMenu - Workbook4, Section 3-16 -->
+<!-- FoodMenu mini-project - Workbook4, Section 3-16, page 68-->
 <!-- <style>
     body {
         color:blanchedalmond;
@@ -102,11 +102,9 @@
     };
     //1. find category list and listen for its change event.
     let categoryElement = document.getElementById("category");
-
     categoryElement.addEventListener("change", () => {
         let selectedOption = categoryElement.selectedOptions[0];
         let value = selectedOption.value;
-        console.log(value);
         
         //2. find selected category value corresponding list of strings in the data
         let list = menu[value];
